@@ -1,5 +1,14 @@
 import tkinter as tk
+import os.path
+
 window = tk.Tk()
+
+if not os.path.exists('actions.log'):
+    with open('.gitignore', 'w') as gitignore:
+        gitignore.write('actions.log')
+    
+    gitignore.close()
+
 
 action_log = open('actions.log', 'a')
 
